@@ -11,6 +11,9 @@ public class CSVReaderDemo {
 
     public static void main(String[] args) {
         String csvFile = "UrlList.csv";
+        if (args.length > 0) {
+            csvFile = args[0];
+        }
         List<PictureFiles> picUrls = readFromCsvFile(csvFile);
         for (PictureFiles p : picUrls) {
             System.out.println(p );

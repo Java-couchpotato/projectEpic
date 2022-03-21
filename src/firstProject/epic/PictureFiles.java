@@ -3,10 +3,13 @@ package firstProject.epic;
 public class PictureFiles {
     private String linkOfPic;
     private String action;
+    static int counter;
+    int id;
 
     public PictureFiles(String linkOfPic, String action) {
         this.linkOfPic=linkOfPic;
         this.action = action;
+        id=++counter;
     }
 
     public String getLinkOfPic() {
@@ -15,8 +18,7 @@ public class PictureFiles {
 
     @Override
     public String toString() {
-        return "File "+ linkOfPic + '\'' +
-                ", action " +action ;
+        return String.format("File %s: %s\nAction %s: %s",id, linkOfPic,id,action);
     }
 
     public void setLinkOfPic(String linkOfPic) {
