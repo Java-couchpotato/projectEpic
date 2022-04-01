@@ -1,38 +1,45 @@
 package firstProject.epic;
 
+import java.util.List;
+
+import static firstProject.epic.CSVReader.readFromCsvFile;
+
 public class PictureFiles {
-    private String linkOfPic;
-    private String action;
+    private String linkOfPicture;
+    private String actionForPicture;
     static int counter;
     int id;
 
     public PictureFiles(String linkOfPic, String action) {
-        this.linkOfPic=linkOfPic;
-        this.action = action;
-        id=++counter;
+        this.linkOfPicture = linkOfPic;
+        this.actionForPicture = action;
+        id = ++counter;
     }
 
-    public String getLinkOfPic() {
-        return linkOfPic;
+    public String getLinkOfPicture(String csvFile) {
+        List<PictureFiles> picturesUrls = readFromCsvFile(csvFile);
+        String imageLink = null;
+        for (int i = 0; i < picturesUrls.size(); i++) {
+           imageLink = picturesUrls.get(i).getLinkOfPicture();
+      }
+        return {imageLink};
+    }
+
+    public void setLinkOfPicture(String linkOfPicture) {
+        this.linkOfPicture = linkOfPicture;
+    }
+
+    public String getActionForPicture() {
+        return actionForPicture;
+    }
+
+    public void setActionForPicture(String actionForPicture) {
+        this.actionForPicture = actionForPicture;
     }
 
     @Override
     public String toString() {
-        return String.format("File %s: %s\nAction %s: %s",id, linkOfPic,id,action);
+        return String.format("File %s: %s\nAction %s: %s", id, linkOfPicture, id, actionForPicture);
     }
-
-    public void setLinkOfPic(String linkOfPic) {
-        this.linkOfPic = linkOfPic;
-    }
-
-    public String getAction() {
-        return action;
-    }
-
-    public void setAction(String action) {
-        this.action = action;
-    }
-
-
 
 }

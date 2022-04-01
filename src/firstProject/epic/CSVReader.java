@@ -5,36 +5,35 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CSVReaderDemo {
+public class CSVReader {
 
     String csvFile;
 
+    private static PictureFiles createFilesList(String[] rowsFromFile) {
 
-    private static PictureFiles createFilesList(String[] metadata) {
-
-        String linkOfPic = metadata[0];
-        String action = metadata[1];
+        String linkOfPic = rowsFromFile[0];
+        String action = rowsFromFile[1];
 
         return new PictureFiles(linkOfPic, action);
     }
 
-
     public static List<PictureFiles> readFromCsvFile(String csvFile) {
-        List<PictureFiles> urlList = new ArrayList<>();
+
+        List<PictureFiles> urlFromFile = new ArrayList<>();
         String line = "";
 
         try (BufferedReader reader = new BufferedReader(new FileReader(csvFile))) {
             while ((line = reader.readLine()) != null) {
-                String[] attributes = line.split(",");
-                PictureFiles pf = createFilesList(attributes);
-                urlList.add(pf);
+                String[] rows = line.split(",");
+                PictureFiles rowFromFile = createFilesList(rows);
+                urlFromFile.add(rowFromFile);
             }
 
         } catch (
                 Exception e) {
             e.printStackTrace();
         }
-        return urlList;
+        return urlFromFile;
     }
 }
 
