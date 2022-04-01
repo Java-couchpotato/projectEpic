@@ -20,9 +20,9 @@ public class PictureFiles {
         List<PictureFiles> picturesUrls = readFromCsvFile(csvFile);
         String imageLink = null;
         for (int i = 0; i < picturesUrls.size(); i++) {
-           imageLink = picturesUrls.get(i).getLinkOfPicture();
+           imageLink = picturesUrls.get(i).getLinkOfPicture(csvFile);
       }
-        return {imageLink};
+        return imageLink;
     }
 
     public void setLinkOfPicture(String linkOfPicture) {
