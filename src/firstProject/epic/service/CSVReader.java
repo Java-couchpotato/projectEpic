@@ -1,4 +1,6 @@
-package firstProject.epic;
+package firstProject.epic.service;
+
+import firstProject.epic.entity.PictureFiles;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -7,7 +9,7 @@ import java.util.List;
 
 public class CSVReader {
 
-    String csvFile;
+    //private static String csvFile;
 
     private static PictureFiles createFilesList(String[] rowsFromFile) {
 
@@ -20,7 +22,7 @@ public class CSVReader {
     public static List<PictureFiles> readFromCsvFile(String csvFile) {
 
         List<PictureFiles> urlFromFile = new ArrayList<>();
-        String line = "";
+        String line;
 
         try (BufferedReader reader = new BufferedReader(new FileReader(csvFile))) {
             while ((line = reader.readLine()) != null) {

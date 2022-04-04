@@ -1,11 +1,11 @@
 package firstProject.epic;
 
+import firstProject.epic.entity.PictureFiles;
+
 import java.io.IOException;
 import java.util.List;
 
-import static firstProject.epic.CSVReader.readFromCsvFile;
-import static firstProject.epic.ImageLoader.downloadImage;
-
+import static firstProject.epic.service.CSVReader.readFromCsvFile;
 
 
 public class Main {
@@ -16,7 +16,6 @@ public class Main {
 //        for (int i = 0; i < picturesUrls.size(); i++) {
 //            imageLink = picturesUrls.get(i).getLinkOfPicture();
 //        }
-        downloadImage(picturesUrls.get(0).getLinkOfPicture());
 
     }
 

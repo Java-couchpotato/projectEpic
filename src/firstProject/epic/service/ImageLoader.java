@@ -1,10 +1,7 @@
-package firstProject.epic;
+package firstProject.epic.service;
 
 import java.io.*;
 import java.net.URL;
-import java.util.List;
-
-import static firstProject.epic.CSVReader.readFromCsvFile;
 
 public class ImageLoader {
 

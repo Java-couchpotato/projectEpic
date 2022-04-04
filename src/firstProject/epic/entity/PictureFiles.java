@@ -1,8 +1,8 @@
-package firstProject.epic;
+package firstProject.epic.entity;
 
 import java.util.List;
 
-import static firstProject.epic.CSVReader.readFromCsvFile;
+import static firstProject.epic.service.CSVReader.readFromCsvFile;
 
 public class PictureFiles {
     private String linkOfPicture;
